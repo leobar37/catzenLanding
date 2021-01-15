@@ -1,0 +1,42 @@
+.service {
+  display: flex;
+  margin: 0 auto;
+  height: 90vh;
+  flex-direction: row;
+  &__image {
+    width: 50%;
+    height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+      object-position: 10% 80%;
+    }
+  }
+  &.reverse {
+    .service__text {
+      .content {
+        margin-right: 10%;
+        margin-left: auto;
+      }
+    }
+  }
+  &__text {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: $primary-color;
+    color: white;
+    font-weight: bold;
+    .content {
+      margin-top: 10%;
+      margin-left: 10%;
+      max-width: 500px;
+      .title {
+        margin-bottom: 1.5rem;
+        font-size: 4.2rem;
+      }
+    }
+  }
+}

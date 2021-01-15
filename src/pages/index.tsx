@@ -1,11 +1,9 @@
 import Nav from "@components/Nav";
-
 import SocialLinks from "@components/SocialLinks";
-
 import { Button, Container } from "react-bootstrap";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
+import Footer from "@components/Footer";
 
 SwiperCore.use([Navigation]);
 
@@ -35,7 +33,7 @@ const Services = () => {
 
   return (
     <section className="services d-flex justify-content-center align-items-center flex-column">
-      <h1 className="title text-center">servicios</h1>
+      <h1 className="title text-center">Servicios</h1>
       <div className="items">
         {services.map((item, i) => (
           <button className="item" key={i}>
@@ -56,7 +54,6 @@ const GaleryReson = () => {
       <h1 className="title text-center">
         ¿Ques es lo que debe tener en cuenta una empresa?
       </h1>
-
       <Swiper navigation className="sllidereason" slidesPerView={1}>
         <SwiperSlide>
           <div className="image">
@@ -113,21 +110,18 @@ export default function Home() {
               </p>
               <Button variant="primary">cotizar</Button>
             </div>
-
             {/* right */}
             <div className="header__image">
               <img src="/assets/images/bocina.svg" alt="" />
             </div>
           </header>
         </Container>
-
         <div className="addon_rect">
           <Container>
             <SocialLinks />
           </Container>
         </div>
       </div>
-
       {/* about  */}
       <Container>
         <section className="element_info">
@@ -204,76 +198,74 @@ export default function Home() {
       </section>
       {/*testimonials */}
       <section className="testimonial">
-        <Container>
-          <h1 className="title text-center text-capitalize">testimonios</h1>
-
-          <Swiper centeredSlides={true} slidesPerView={2}>
-            <SwiperSlide>
-              <div className="testimonial__card">
-                <div className="image">
-                  <div className="image_center">
-                    <img src="/assets/images/persons/rae.jpg" alt="" />
-                  </div>
-                </div>
-                <div className="card_header">
-                  <h3 className="title">Roberto Agurto</h3>
-                  <span className="caption">ceo wellnessPro</span>
-                </div>
-                <div className="card_body">
-                  <p className="paragraph">
-                    Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
-                    maiores illo expedita iusto illum quibusdam aspernatur
-                    saepe. Rerum consequatur eos velit in. Rerum aut laudantium
-                    optio. Velit odit amet.
-                  </p>
+        <h1 className="title text-center text-capitalize">testimonios</h1>
+        <Swiper centeredSlides={true} slidesPerView={3}>
+          <SwiperSlide>
+            <div className="testimonial__card">
+              <div className="image">
+                <div className="image_center">
+                  <img src="/assets/images/persons/rae.jpg" alt="" />
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="testimonial__card">
-                <div className="image">
-                  <div className="image_center">
-                    <img src="/assets/images/persons/rae.jpg" alt="" />
-                  </div>
-                </div>
-                <div className="card_header">
-                  <h3 className="title">Roberto Agurto</h3>
-                  <span className="caption">ceo wellnessPro</span>
-                </div>
-                <div className="card_body">
-                  <p className="paragraph">
-                    Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
-                    maiores illo expedita iusto illum quibusdam aspernatur
-                    saepe. Rerum consequatur eos velit in. Rerum aut laudantium
-                    optio. Velit odit amet.
-                  </p>
+              <div className="card_header">
+                <h3 className="title">Roberto Agurto</h3>
+                <span className="caption">ceo wellnessPro</span>
+              </div>
+              <div className="card_body">
+                <p className="paragraph">
+                  Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
+                  maiores illo expedita iusto illum quibusdam aspernatur saepe.
+                  Rerum consequatur eos velit in. Rerum aut laudantium optio.
+                  Velit odit amet.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="testimonial__card">
+              <div className="image">
+                <div className="image_center">
+                  <img src="/assets/images/persons/rae.jpg" alt="" />
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="testimonial__card">
-                <div className="image">
-                  <div className="image_center">
-                    <img src="/assets/images/persons/rae.jpg" alt="" />
-                  </div>
-                </div>
-                <div className="card_header">
-                  <h3 className="title">Roberto Agurto</h3>
-                  <span className="caption">ceo wellnessPro</span>
-                </div>
-                <div className="card_body">
-                  <p className="paragraph">
-                    Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
-                    maiores illo expedita iusto illum quibusdam aspernatur
-                    saepe. Rerum consequatur eos velit in. Rerum aut laudantium
-                    optio. Velit odit amet.
-                  </p>
+              <div className="card_header">
+                <h3 className="title">Roberto Agurto</h3>
+                <span className="caption">ceo wellnessPro</span>
+              </div>
+              <div className="card_body">
+                <p className="paragraph">
+                  Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
+                  maiores illo expedita iusto illum quibusdam aspernatur saepe.
+                  Rerum consequatur eos velit in. Rerum aut laudantium optio.
+                  Velit odit amet.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="testimonial__card">
+              <div className="image">
+                <div className="image_center">
+                  <img src="/assets/images/persons/jeanpaul.jpg" alt="" />
                 </div>
               </div>
-            </SwiperSlide>
-          </Swiper>
-        </Container>
+              <div className="card_header">
+                <h3 className="title">Jean Paul</h3>
+                <span className="caption">ceo JeanPaulCoach</span>
+              </div>
+              <div className="card_body">
+                <p className="paragraph">
+                  Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo
+                  maiores illo expedita iusto illum quibusdam aspernatur saepe.
+                  Rerum consequatur eos velit in. Rerum aut laudantium optio.
+                  Velit odit amet.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
+      <Footer />
     </>
   );
 }

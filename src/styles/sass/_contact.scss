@@ -1,0 +1,138 @@
+.contact {
+  padding: 50px 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.85),
+      rgba($primary-color, 0.85)
+    ),
+    url("/assets/images/services/marketing_digital.png");
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_title {
+    color: white;
+    font-weight: 600;
+    font-style: italic;
+    max-width: 600px;
+    text-align: center;
+    font-size: 3rem;
+  }
+  align-items: center;
+  flex-direction: column;
+
+  .inputs {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+  }
+  .form {
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* catzen input  */
+
+.catzen_input {
+  margin: 15px 10px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 55px;
+  /* variables */
+  $bottom-label: 15px;
+  $bottom-label-leave: 40px;
+  label {
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.2s ease;
+    bottom: $bottom-label;
+    font-weight: 300;
+  }
+
+  /* control label with text area */
+  textarea ~ label {
+    top: 0;
+  }
+
+  textarea {
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      font-size: 0.85em !important;
+      top: -25px !important;
+    }
+
+    /* when focus in a control placeolder is shown  */
+
+    &:focus::-webkit-input-placeholder {
+      opacity: 0.8;
+      color: white;
+      font-weight: 300;
+    }
+  }
+
+  /* default plachelder for float inputs */
+
+  ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+  input,
+  textarea {
+    width: 100%;
+    position: absolute;
+    color: #ffffff;
+    font-size: 0.9em;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+  }
+  /* control input */
+  input {
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      font-size: 0.85em !important;
+      bottom: $bottom-label-leave !important;
+      left: 0px !important;
+    }
+    &:focus::-webkit-input-placeholder {
+      opacity: 0.8;
+      color: white;
+      font-weight: 300;
+    }
+
+    &:placeholder-shown ~ label {
+      bottom: $bottom-label;
+      font-size: 1em;
+      opacity: 1;
+    }
+  }
+
+  /* texAreas */
+}
+/*  */
+.check_services {
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
+  h3 {
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  width: 100%;
+  color: white;
+  .pretty {
+    margin: 10px 10px;
+  }
+}

@@ -1,34 +1,142 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## testimonial
 
-## Getting Started
+### Prerequisites
 
-First, run the development server:
+- OSwald font
+- Open sans Font
+- Swiper Carousel
 
-```bash
-npm run dev
-# or
-yarn dev
+```tsx
+<section className="testimonial">
+  <h1 className="title text-center text-capitalize">testimonios</h1>
+  <Swiper centeredSlides={true} slidesPerView={3}>
+    <SwiperSlide>
+      <div className="testimonial__card">
+        <div className="image">
+          <div className="image_center">
+            <img src="/assets/images/persons/rae.jpg" alt="" />
+          </div>
+        </div>
+        <div className="card_header">
+          <h3 className="title">Roberto Agurto</h3>
+          <span className="caption">ceo wellnessPro</span>
+        </div>
+        <div className="card_body">
+          <p className="paragraph">
+            Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo maiores
+            illo expedita iusto illum quibusdam aspernatur saepe. Rerum
+            consequatur eos velit in. Rerum aut laudantium optio. Velit odit
+            amet.
+          </p>
+        </div>
+      </div>
+    </SwiperSlide>
+    <SwiperSlide>
+      <div className="testimonial__card">
+        <div className="image">
+          <div className="image_center">
+            <img src="/assets/images/persons/rae.jpg" alt="" />
+          </div>
+        </div>
+        <div className="card_header">
+          <h3 className="title">Roberto Agurto</h3>
+          <span className="caption">ceo wellnessPro</span>
+        </div>
+        <div className="card_body">
+          <p className="paragraph">
+            Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo maiores
+            illo expedita iusto illum quibusdam aspernatur saepe. Rerum
+            consequatur eos velit in. Rerum aut laudantium optio. Velit odit
+            amet.
+          </p>
+        </div>
+      </div>
+    </SwiperSlide>
+    <SwiperSlide>
+      <div className="testimonial__card">
+        <div className="image">
+          <div className="image_center">
+            <img src="/assets/images/persons/jeanpaul.jpg" alt="" />
+          </div>
+        </div>
+        <div className="card_header">
+          <h3 className="title">Jean Paul</h3>
+          <span className="caption">ceo JeanPaulCoach</span>
+        </div>
+        <div className="card_body">
+          <p className="paragraph">
+            Pariatur aut ut. Et voluptates voluptatem ut quae. Explicabo maiores
+            illo expedita iusto illum quibusdam aspernatur saepe. Rerum
+            consequatur eos velit in. Rerum aut laudantium optio. Velit odit
+            amet.
+          </p>
+        </div>
+      </div>
+    </SwiperSlide>
+  </Swiper>
+</section>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### css code
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```scss
+/* variables */
+$size-avatar: 200px;
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+.testimonial {
+  margin: 50px auto;
+  &__card {
+    margin: 25px auto;
+    border-radius: 25px;
+    padding: 10px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -1px 2px 40px -20px rgba(0, 0, 0, 1);
+    /* avatar */
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    .image {
+      box-shadow: -1px 2px 40px -20px rgba(0, 0, 0, 1);
+      margin: 25px;
+      width: $size-avatar;
+      height: $size-avatar;
+      overflow: hidden;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &_center {
+        overflow: hidden;
+        width: $size-avatar - 20px;
+        height: $size-avatar - 20px;
+        padding: 5px;
+        border-radius: 50%;
+        position: relative;
+        img {
+          position: absolute;
+          width: 100%;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    }
+    /* body card */
+    .card_header {
+      padding: 15px 0;
+      text-align: center;
+      .caption {
+        color: rgba($color: black, $alpha: 0.5);
+      }
+    }
+    .card_body {
+      padding: 0 5px;
+      p {
+        text-align: center;
+        padding: 10px 10px;
+      }
+    }
+  }
+}
+```

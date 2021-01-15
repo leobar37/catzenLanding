@@ -1,0 +1,30 @@
+.paragraph {
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+.title {
+  font-family: $oswald;
+}
+
+%default_button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.btn_catzen {
+  @extend %default_button;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 15px auto;
+  transition: 0.2s;
+  font-weight: 600;
+  &:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.08);
+  }
+}

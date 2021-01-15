@@ -3,14 +3,6 @@ import Image from "next/image";
 import NextLink from "next/link";
 import { Container } from "react-bootstrap";
 
-const Logo = ({ img }: { img: string }) => {
-  return (
-    <div className="logo">
-      <img src={img} alt="" width="150" />
-    </div>
-  );
-};
-
 function Nav() {
   const itemsMenu: { name: string; route: string }[] = [
     {
@@ -19,7 +11,7 @@ function Nav() {
     },
     {
       name: "Servicios",
-      route: "",
+      route: "services",
     },
     {
       name: "Portafolio",
@@ -27,14 +19,14 @@ function Nav() {
     },
     {
       name: "Contacto",
-      route: "",
+      route: "contact",
     },
   ];
 
   return (
     <Container>
-      <nav className="d-flex  my-2 flex-row justify-content-around align-items-center">
-        <Logo img="/assets/images/logo_black.png" />
+      <nav className="d-flex  mt-4 flex-row justify-content-between align-items-center">
+        <img width="200" src="/assets/images/logo_catzen.png" alt="" />
         <ul className="menu_navbar">
           {/* items menú */}
           {itemsMenu.map((item, i) => (
