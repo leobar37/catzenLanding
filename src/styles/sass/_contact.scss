@@ -21,7 +21,6 @@
   }
   align-items: center;
   flex-direction: column;
-
   .inputs {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -33,6 +32,24 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  /***************************responsive contact*************************************/
+  @include media-sm {
+    .inputs {
+      grid-template-columns: 1fr;
+    }
+    .contact_title {
+      font-size: 2rem !important;
+    }
+  }
+  @include media-ssm {
+    .contact_title {
+      padding: 0 15px;
+      font-size: 1.8rem !important;
+    }
+  }
+
+  /***************************responsive contact*************************************/
 }
 
 /* catzen input  */
@@ -79,7 +96,6 @@
       font-weight: 300;
     }
   }
-
   /* default plachelder for float inputs */
 
   ::-webkit-input-placeholder {
@@ -121,7 +137,7 @@
 
   /* texAreas */
 }
-/*  */
+/*   */
 .check_services {
   display: flex;
   margin-left: 10px;
@@ -129,6 +145,11 @@
   h3 {
     font-weight: 300;
     font-size: 1.1rem;
+  }
+  @include media-sm {
+    .pretty {
+      font-size: 1rem;
+    }
   }
   width: 100%;
   color: white;

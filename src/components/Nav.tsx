@@ -7,7 +7,7 @@ function Nav() {
   const itemsMenu: { name: string; route: string }[] = [
     {
       name: "Inicio",
-      route: "",
+      route: "/",
     },
     {
       name: "Servicios",
@@ -26,7 +26,12 @@ function Nav() {
   return (
     <Container>
       <nav className="d-flex  mt-4 flex-row justify-content-between align-items-center">
-        <img width="200" src="/assets/images/logo_catzen.png" alt="" />
+        <NextLink href="/" passHref>
+          <a href="">
+            <img width="200" src="/assets/images/logo_catzen.png" alt="" />
+          </a>
+        </NextLink>
+
         <ul className="menu_navbar">
           {/* items menú */}
           {itemsMenu.map((item, i) => (

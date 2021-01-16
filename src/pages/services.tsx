@@ -9,7 +9,7 @@ function Services() {
       {/* audiovisual */}
       <section className="service">
         <div className="service__image">
-          <img src="/assets/images/services/fotografia.png" alt="" />
+          <img src="/assets/images/services/audiovisuales.png" alt="" />
         </div>
         <div className="service__text">
           <div className="content">
@@ -36,7 +36,7 @@ function Services() {
           </div>
         </div>
         <div className="service__image">
-          <img src="/assets/images/services/audiovisuales.png" alt="" />
+          <img src="/assets/images/services/fotografia.png" alt="" />
         </div>
       </section>
       {/* digital marketing */}
