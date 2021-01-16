@@ -4,6 +4,7 @@ import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import Footer from "@components/Footer";
+import Head from "next/head";
 SwiperCore.use([Navigation]);
 const Services = () => {
   const services: { name: string; link: string }[] = [
@@ -99,6 +100,9 @@ const GaleryReson = () => {
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Catzen</title>
+      </Head>
       <Nav />
       <div className="hero">
         <Container>

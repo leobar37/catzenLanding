@@ -31,7 +31,6 @@ export default class MyDocument extends Document {
             integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
             crossOrigin="anonymous"
           />
-          <title>Catzen</title>
         </Head>
         <body>
           <Main></Main>
