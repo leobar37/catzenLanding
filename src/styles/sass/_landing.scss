@@ -1,30 +1,53 @@
 /* generlas */
 
 .menu_navbar {
+  overflow: hidden;
   a {
     text-decoration: none;
     padding: 10px 25px;
     font-weight: 400;
     // font-family: $open-sans;
   }
-}
 
+  /* responsive  menu bar */
+
+  @include media-sm {
+    display: none;
+  }
+}
 .hero {
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
   .addon_rect {
     width: 100%;
     height: 10rem;
     bottom: 6rem;
     position: absolute;
   }
+  /***************************responsive hero*************************************/
+  @include media-md {
+    height: 80vh;
+    .addon_rect {
+      bottom: 1rem;
+    }
+  }
+  @include media-sm {
+    height: 90vh;
+    .addon_rect {
+      bottom: 1.5rem;
+    }
+  }
+
+  /***************************responsive hero*************************************/
 }
+
 .header {
   display: flex;
   padding: 100px 0;
   &__text {
     .title {
-      font-size: 65px;
+      font-size: 5rem;
     }
     p {
       font-weight: 300;
@@ -41,6 +64,64 @@
       width: 100%;
     }
   }
+  /***************************responsive header*************************************/
+  @include media-lg {
+    .header__image {
+      img {
+        object-fit: cover;
+        transform: scale(1.4);
+      }
+    }
+  }
+  @include media-md {
+    padding: 0px 0;
+    margin: 25px 50px;
+    .header__text {
+      .title {
+        font-size: 3rem;
+      }
+    }
+    .header__image {
+      flex-basis: 100%;
+      width: 100%;
+      img {
+        margin-top: 2rem;
+        width: 160%;
+        margin-left: -50px;
+      }
+    }
+  }
+
+  /* mobile */
+
+  @include media-sm {
+    flex-direction: column;
+    .header__image {
+      order: 1;
+      width: 100%;
+      // border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      img {
+        margin: 0 auto !important;
+        width: 60%;
+      }
+    }
+    .header__text {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      order: 2;
+      .title {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  /***************************responsive header*************************************/
 }
 
 .addon_rect {
@@ -50,15 +131,13 @@
   background-color: $primary-color;
   display: flex;
   align-items: center;
-}
-.socialIcons {
-  text-align: left;
-  a {
-    padding: 10px 10px;
+  @include media-md {
+    &.two {
+      margin-top: 1rem !important;
+    }
   }
-  a i {
-    font-size: 2.5rem;
-    color: white;
+  @include media-sm {
+    height: 115px !important;
   }
 }
 
@@ -77,12 +156,63 @@
   &__image {
     flex: 60%;
     img {
-      transform: scale(1.1) translateX(25px);
       width: 100%;
     }
   }
+  overflow: hidden;
+  /***************************responsive*************************************/
+  @include media-md {
+    margin: 0rem 2rem;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    &.two {
+      .element_info__text {
+        padding: 0 25px;
+      }
+    }
+    .element_info__image {
+      overflow: visible;
+      max-width: 250px;
+      align-self: flex-end;
+      img {
+        transform: scale(1.4);
+      }
+    }
+    .element_info__text {
+      align-self: flex-start;
+      .title {
+        padding: 10px 0;
+      }
+    }
+  }
+  @include media-sm {
+    flex-direction: column;
+    .element_info__text {
+      order: 2;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        text-align: center;
+      }
+    }
+    .element_info__image {
+      order: 1;
+      width: 100%;
+      margin: 0 auto;
+      img {
+        transform: scale(1);
+      }
+    }
+  }
+
+  /***************************responsive*************************************/
 }
 
+/*=============================================
+=            services            =
+=============================================*/
 .services {
   margin: 50px 0;
   .items {
@@ -90,6 +220,9 @@
     display: grid;
     grid-gap: 35px;
     grid-template-columns: repeat(2, 1fr);
+    @include media-sm {
+      grid-template-columns: 1fr;
+    }
   }
   .item {
     min-width: 300px;
@@ -122,6 +255,8 @@
   }
 }
 
+/* galery  one  */
+
 .galery_reason {
   margin-top: 2rem;
   /* separate buttons*/
@@ -146,7 +281,6 @@
     margin-top: 3rem;
     .swiper-slide {
       height: 85vh;
-
       position: relative;
     }
     %base_elements {
@@ -189,7 +323,57 @@
         }
       }
     }
+    /***************************responsive slider reason*************************************/
+    @include media-sm {
+      .content {
+        .title {
+          font-size: 2rem;
+        }
+        .paragraph {
+          font-size: 1rem;
+          padding: 0 15px;
+        }
+      }
+      .image {
+        img {
+          position: static !important;
+          object-fit: cover;
+        }
+      }
+    }
+
+    /***************************responsive slider reason*************************************/
   }
+  /***************************responsive*************************************/
+  @include media-md {
+    .swiper-button-next,
+    .swiper-button-prev {
+      margin-top: 20%;
+    }
+    .swiper-button-next {
+      padding-left: 25px;
+    }
+    .sllidereason {
+      .swiper-slide {
+        height: 60vh;
+      }
+    }
+  }
+  @include media-sm {
+    .swiper-button-next,
+    .swiper-button-prev {
+      margin-top: 22%;
+    }
+    .swiper-button-next {
+      padding-left: 50px;
+    }
+    .sllidereason {
+      .swiper-slide {
+        height: 34vh;
+      }
+    }
+  }
+  /***************************responsive*************************************/
 }
 
 .clients {
@@ -225,6 +409,9 @@
     align-items: center;
     box-shadow: -1px 2px 40px -20px rgba(0, 0, 0, 1);
     /* avatar */
+    @include media-ssm {
+      width: 280px;
+    }
     .image {
       box-shadow: -1px 2px 40px -20px rgba(0, 0, 0, 1);
       margin: 25px;
@@ -265,16 +452,5 @@
         padding: 10px 10px;
       }
     }
-  }
-}
-
-.footer {
-  background-color: $primary-color;
-  color: white;
-  .content {
-    padding: 25px 0;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
   }
 }

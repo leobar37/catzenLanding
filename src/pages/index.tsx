@@ -4,9 +4,7 @@ import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import Footer from "@components/Footer";
-
 SwiperCore.use([Navigation]);
-
 const Services = () => {
   const services: { name: string; link: string }[] = [
     {
@@ -54,7 +52,11 @@ const GaleryReson = () => {
       <h1 className="title text-center">
         ¿Ques es lo que debe tener en cuenta una empresa?
       </h1>
-      <Swiper navigation className="sllidereason" slidesPerView={1}>
+      <Swiper
+        breakpoints={{ 0: { navigation: false }, 425: { navigation: true } }}
+        className="sllidereason"
+        slidesPerView={1}
+      >
         <SwiperSlide>
           <div className="image">
             <img src="/assets/images/slider/one.jpg" alt="" />
@@ -150,7 +152,7 @@ export default function Home() {
 
       {/* take your business to next level  */}
       <Container>
-        <section className="element_info">
+        <section className="element_info two">
           <div className="element_info__text">
             <h1 className="title">LLEVA TU EMPRESA AL SIGUIENTE NIVEL</h1>
             <p className="paragraph">
@@ -165,7 +167,7 @@ export default function Home() {
           </div>
         </section>
       </Container>
-      <div className="addon_rect" style={{ marginTop: "-70px" }}></div>
+      <div className="addon_rect two" style={{ marginTop: "-70px" }}></div>
       {/* clients */}
       <section className="clients">
         <Container>
@@ -179,7 +181,13 @@ export default function Home() {
         </Container>
         <div className="addon_rect clients_slider">
           <Container>
-            <Swiper slidesPerView={4}>
+            <Swiper
+              breakpoints={{
+                1024: { slidesPerView: 4 },
+                768: { slidesPerView: 3 },
+                0: { slidesPerView: 1 },
+              }}
+            >
               <SwiperSlide>
                 <img src="/assets/images/logos/jeanpaul.png" alt="" />
               </SwiperSlide>
@@ -199,7 +207,13 @@ export default function Home() {
       {/*testimonials */}
       <section className="testimonial">
         <h1 className="title text-center text-capitalize">testimonios</h1>
-        <Swiper centeredSlides={true} slidesPerView={3}>
+        <Swiper
+          centeredSlides={true}
+          breakpoints={{
+            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+          }}
+        >
           <SwiperSlide>
             <div className="testimonial__card">
               <div className="image">
