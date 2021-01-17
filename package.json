@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@djthoms/pretty-checkbox": "^3.1.0",
+    "animate.css": "^4.1.1",
     "bootstrap": "^4.5.3",
     "gsap": "^3.6.0",
     "next": "10.0.5",

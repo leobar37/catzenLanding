@@ -16,18 +16,19 @@
   padding: 0 50px;
   position: fixed;
   width: 100vw;
-
   z-index: 1000;
   background-color: white;
   .sub_nav {
     display: none;
   }
-  &.open {
+
+  &.open-enter-done {
     height: 100vh;
+    opacity: 1;
     background-color: $primary-color;
     .menu {
       i {
-        color: white;
+        color: #ffffff;
       }
     }
     .logo {
@@ -39,6 +40,8 @@
       display: flex;
       flex-direction: row;
       &__info {
+        animation-name: backInDown;
+        animation-duration: 0.5s;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
