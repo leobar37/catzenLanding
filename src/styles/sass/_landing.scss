@@ -18,9 +18,9 @@
     }
   }
   @include media-sm {
-    height: 90vh;
+    height: 100vh;
     .addon_rect {
-      bottom: 1.5rem;
+      bottom: 1rem !important;
     }
   }
 
@@ -76,7 +76,6 @@
       }
     }
   }
-
   /* mobile */
 
   @include media-sm {
@@ -128,7 +127,6 @@
 
 /* element two columns
  */
-
 .element_info {
   margin-top: 2rem;
   display: flex;
