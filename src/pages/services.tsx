@@ -7,7 +7,7 @@ function Services() {
       <NavBar />
       {/* service */}
       {/* audiovisual */}
-      <section className="service">
+      <section className="service margin_of_nav">
         <div className="service__image">
           <img src="/assets/images/services/audiovisuales.png" alt="" />
         </div>

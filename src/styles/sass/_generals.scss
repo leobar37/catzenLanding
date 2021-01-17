@@ -50,6 +50,22 @@
   @include media-md {
     text-align: center;
   }
+  @include media-sm {
+    a i {
+      font-size: 2rem;
+    }
+  }
+  @include media-ssm {
+    width: 100%;
+    width: 100vw;
+    vertical-align: middle;
+    a {
+      padding: 0 8px;
+    }
+    a i {
+      font-size: 2rem;
+    }
+  }
 }
 .footer {
   background-color: $primary-color;
@@ -73,4 +89,8 @@
       }
     }
   }
+}
+
+.margin_of_nav {
+  padding-top: 10vh !important;
 }

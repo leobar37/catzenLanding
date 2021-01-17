@@ -9,19 +9,32 @@
   width: 100vw;
   position: fixed;
   display: none;
-  top: 3rem;
+  top: 0;
   left: 0;
 }
 .contain_nav {
-  padding: 0 50px;
+  padding: 0px 50px;
   position: fixed;
   width: 100vw;
   z-index: 1000;
   background-color: white;
+  /***************************responsive nav genera*************************************/
+  @include media-sm {
+    .logo {
+      width: 100px;
+      margin-top: 0.7rem;
+      margin-left: -25px;
+      img {
+        width: 150px;
+        object-fit: contain;
+      }
+    }
+  }
+  /***************************responsive nav genera*************************************/
   .sub_nav {
     display: none;
   }
-
+  /* open  navbar*/
   &.open-enter-done {
     height: 100vh;
     opacity: 1;
@@ -41,14 +54,13 @@
       flex-direction: row;
       &__info {
         animation-name: backInDown;
-        animation-duration: 0.5s;
+        animation-duration: 0.6s;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
         align-items: center;
         width: 50%;
         .image {
-          border: 2px solid white;
           object-fit: contain;
         }
         .title {
@@ -58,6 +70,41 @@
           margin-top: -10px;
         }
       }
+      /***************************sub nav  responsive*************************************/
+      @include media-md {
+        &__info {
+          margin-top: 2rem;
+          .title {
+            font-size: 3.5rem;
+            margin-top: 0;
+          }
+        }
+      }
+      @include media-sm {
+        order: 2;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        &__info {
+          width: 60%;
+          .image {
+            width: 150px !important;
+            object-fit: cover;
+          }
+          .title {
+            font-size: 2rem !important;
+          }
+        }
+      }
+      @include media-ssm {
+        &__info {
+          width: 55%;
+          .title {
+            font-size: 2rem !important;
+          }
+        }
+      }
+      /***************************sub nav  responsive*************************************/
     }
     .menu_navbar {
       color: white;
@@ -71,8 +118,45 @@
       a {
         margin: 15px 0;
         color: white;
-        font-size: 3.5rem;
+        font-size: 3.2rem;
+        text-decoration: none;
+        transition: transform 0.2s;
+        position: relative;
+        &::after {
+          transition: width 0.2s;
+          content: "";
+          bottom: 0;
+          left: 0;
+          right: 0;
+          position: absolute;
+          width: 0%;
+          margin: auto;
+          height: 3px;
+          background-color: white;
+        }
+        &:hover {
+          transform: scale(1.2) !important;
+        }
+        &:hover::after {
+          width: 100% !important;
+        }
       }
+      /***************************responsive menu bar*************************************/
+      @include media-md {
+        a {
+          font-size: 3rem !important;
+        }
+      }
+      @include media-sm {
+        order: 2;
+        justify-content: flex-start;
+        margin-top: 2rem;
+        a {
+          margin: 10px 0;
+          font-size: 2.5rem !important;
+        }
+      }
+      /***************************responsive menu bar*************************************/
     }
   }
 }

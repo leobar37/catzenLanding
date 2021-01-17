@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import Footer from "@components/Footer";
 import Head from "next/head";
+import NextLink from "next/link";
 SwiperCore.use([Navigation]);
 const Services = () => {
   const services: { name: string; link: string }[] = [
@@ -104,7 +105,7 @@ export default function Home() {
         <title>Catzen</title>
       </Head>
       <Nav />
-      <div className="hero">
+      <div className="hero margin_of_nav">
         <Container>
           <header className="header">
             {/* left */}
@@ -114,7 +115,9 @@ export default function Home() {
                 Disponemos de un equipo especializado en la creación de paginas
                 web, contenido audiovisual, fotografía y marketing digital
               </p>
-              <Button variant="primary">cotizar</Button>
+              <NextLink href="/contact">
+                <Button variant="primary">cotizar</Button>
+              </NextLink>
             </div>
             {/* right */}
             <div className="header__image">

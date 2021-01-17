@@ -9,7 +9,7 @@ function Contact() {
   return (
     <>
       <NavBar />
-      <section className="contact">
+      <section className="contact margin_of_nav">
         <h1 className="contact_title">
           Cuentanos un poco de tú empresa, queremos ayudarte
         </h1>
