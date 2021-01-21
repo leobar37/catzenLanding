@@ -89,14 +89,3 @@ function Nav() {
 }
 
 export default Nav;
-
-/*
-   <ul className="menu_navbar">
-     
-          {itemsMenu.map((item, i) => (
-            <NextLink key={i} href={item.route} passHref>
-              <a> {item.name}</a>
-            </NextLink>
-          ))}
-        </ul>
- */

@@ -1,0 +1,19 @@
+.notfound {
+  min-height: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .paragraph {
+    font-size: 1.6rem;
+    font-style: italic;
+    @include media-md {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+  @include media-sm {
+    min-height: 500px;
+  }
+}
