@@ -1,0 +1,102 @@
+$distance_elements: 20px;
+$distance_elements_up: 25%;
+
+%efect_enter-one {
+  .logo_link,
+  .paragraph {
+    animation-name: zoomInUp;
+    animation-duration: 1s;
+    opacity: 1;
+  }
+  .links__list {
+    .item_link {
+      //   animation-name: zoomIn;
+      animation-name: flipInX;
+      animation-duration: 1s;
+      opacity: 1;
+    }
+  }
+}
+
+.links {
+  background-color: $primary-color;
+  height: 100vh;
+  width: 100%;
+  .logo_link {
+    opacity: 0;
+  }
+  .paragraph {
+    opacity: 0;
+  }
+  &.link-enter-done {
+    @extend %efect_enter-one;
+  }
+  &__container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    .paragraph {
+      max-width: 400px;
+      padding: 25px 0px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 14px !important;
+    }
+  }
+  .socialIcons {
+    a i {
+      font-size: 25px;
+    }
+  }
+  &__list {
+    margin-top: 1rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .item_link {
+      opacity: 0;
+      margin: 10px 0;
+      width: 350px;
+      padding: 25px 0;
+      background-color: white;
+      position: relative;
+      cursor: pointer;
+      .icon {
+        position: absolute;
+        left: $distance_elements;
+        top: $distance_elements_up;
+        font-size: 30px;
+
+        color: $primary-color;
+      }
+      p {
+        text-transform: capitalize;
+        width: 60%;
+        font-size: 16px;
+        text-align: left;
+        top: $distance_elements_up;
+        position: absolute;
+        right: $distance_elements;
+      }
+      /***************************responsive*************************************/
+      @include media-sm {
+        width: 300px;
+      }
+      /***************************responsive*************************************/
+    }
+  }
+  .links_created {
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 16px;
+    span {
+      font-weight: bold;
+    }
+  }
+}

@@ -13,7 +13,7 @@ function Nav() {
   const itemsMenu: { name: string; route: string }[] = [
     {
       name: "Inicio",
-      route: "/",
+      route: "",
     },
     {
       name: "Servicios",
@@ -75,7 +75,7 @@ function Nav() {
               </div>
               <ul className="menu_navbar">
                 {itemsMenu.map((item, i) => (
-                  <NextLink key={i} href={item.route} passHref>
+                  <NextLink key={i} href={`/${item.route}`} passHref>
                     <a> {item.name}</a>
                   </NextLink>
                 ))}

@@ -1,7 +1,7 @@
 /* generlas */
 
 .hero {
-  height: 100vh;
+  height: 900px;
   position: relative;
   overflow-x: hidden;
   .addon_rect {
@@ -11,17 +11,21 @@
     position: absolute;
   }
   /***************************responsive hero*************************************/
+
   @include media-md {
-    height: 80vh;
+    height: 80vh !important;
     .addon_rect {
       bottom: 1rem;
     }
   }
   @include media-sm {
-    height: 100vh;
+    height: 800px !important;
     .addon_rect {
       bottom: 1rem !important;
     }
+  }
+  @include media-ssm {
+    height: 100;
   }
 
   /***************************responsive hero*************************************/
@@ -310,10 +314,10 @@
     @include media-sm {
       .content {
         .title {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
         .paragraph {
-          font-size: 1rem;
+          font-size: 0.8rem;
           padding: 0 15px;
         }
       }
@@ -346,6 +350,7 @@
     .swiper-button-next,
     .swiper-button-prev {
       margin-top: 22%;
+      display: none !important;
     }
     .swiper-button-next {
       padding-left: 50px;
@@ -363,17 +368,16 @@
   margin: 50px 0;
   &_slider {
     margin: 50px 0;
-    height: 30vh;
+    height: 350px !important;
     .swiper-slide {
-      height: 30vh;
+      height: 350px;
       padding: 50px 0;
       display: flex !important;
-
       justify-content: center;
       align-items: center;
       flex-direction: column;
       img {
-        width: 200px;
+        width: 300px;
       }
     }
   }

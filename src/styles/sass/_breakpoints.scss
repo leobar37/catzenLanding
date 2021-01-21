@@ -16,7 +16,7 @@
   }
 }
 @mixin media-lg {
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 1024px) {
     @content;
   }
 }
@@ -40,6 +40,12 @@
 
 @mixin media_movil {
   @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin customBreakpoint($custom) {
+  @media only screen and (min-width: $custom + "px") {
     @content;
   }
 }

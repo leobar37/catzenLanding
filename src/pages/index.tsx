@@ -2,11 +2,12 @@ import Nav from "@components/Nav";
 import SocialLinks from "@components/SocialLinks";
 import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import Footer from "@components/Footer";
 import Head from "next/head";
 import NextLink from "next/link";
 SwiperCore.use([Navigation]);
+SwiperCore.use([Pagination]);
 const Services = () => {
   const services: { name: string; link: string }[] = [
     {
@@ -55,7 +56,15 @@ const GaleryReson = () => {
         ¿Ques es lo que debe tener en cuenta una empresa?
       </h1>
       <Swiper
-        breakpoints={{ 0: { navigation: false }, 425: { navigation: true } }}
+        autoplay
+        loop
+        navigation
+        pagination
+        breakpoints={{
+          0: { navigation: false },
+          425: { navigation: true },
+          768: { navigation: true },
+        }}
         className="sllidereason"
         slidesPerView={1}
       >
@@ -78,7 +87,7 @@ const GaleryReson = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="image">
-            <img src="/assets/images/slider/two.jpg" alt="" />
+            <img src="/assets/images/slider/one.jpg" alt="" />
           </div>
           <div className="cover"></div>
           <div className="content">
@@ -189,6 +198,8 @@ export default function Home() {
         <div className="addon_rect clients_slider">
           <Container>
             <Swiper
+              loop
+              autoplay
               breakpoints={{
                 1024: { slidesPerView: 4 },
                 768: { slidesPerView: 3 },
@@ -217,7 +228,8 @@ export default function Home() {
         <Swiper
           centeredSlides={true}
           breakpoints={{
-            1024: { slidesPerView: 3 },
+            1300: { slidesPerView: 3 },
+            1200: { slidesPerView: 2 },
             768: { slidesPerView: 2 },
           }}
         >
