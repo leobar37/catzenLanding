@@ -4,6 +4,7 @@ import NextImage from "next/image";
 import SocialLinks from "@components/SocialLinks";
 import { CSSTransition } from "react-transition-group";
 import Head from "next/head";
+import Link from "next/link";
 function Links() {
   const [transition, setTransition] = useState(false);
 
@@ -41,23 +42,29 @@ function Links() {
               </p>
               <SocialLinks />
               <ul className="links__list">
-                <a className="item_link">
-                  <i className="fas fa-globe icon"></i>
-                  <p>página web</p>
-                </a>
-                <a className="item_link">
-                  <i className="fas fa-rss icon"></i>
-                  <p>Visita nuestro Blog</p>
-                </a>
-                <a className="item_link">
-                  <img
-                    width="30"
-                    className="icon"
-                    src="/assets/icons/cotizar.svg"
-                    alt=""
-                  />
-                  <p>Solicita una cotización</p>
-                </a>
+                <Link href="/" passHref>
+                  <a className="item_link">
+                    <i className="fas fa-globe icon"></i>
+                    <p>página web</p>
+                  </a>
+                </Link>
+                <Link passHref href="/blog">
+                  <a className="item_link">
+                    <i className="fas fa-rss icon"></i>
+                    <p>Visita nuestro Blog</p>
+                  </a>
+                </Link>
+                <Link passHref href="/contact">
+                  <a className="item_link">
+                    <img
+                      width="30"
+                      className="icon"
+                      src="/assets/icons/cotizar.svg"
+                      alt=""
+                    />
+                    <p>Solicita una cotización</p>
+                  </a>
+                </Link>
               </ul>
               <a href="" className="links_created">
                 create by <span style={{ fontStyle: "italic" }}>Catzen</span>

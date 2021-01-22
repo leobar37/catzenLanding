@@ -29,14 +29,14 @@ const SocialLinks = () => {
     {
       name: "facebook",
       id: "",
-      link: "",
+      link: "https://www.facebook.com/catzen.es",
       icon: "fab fa-facebook-f",
       placement: "top",
     },
     {
       name: "Instagram",
       id: "",
-      link: "",
+      link: "https://www.instagram.com/catzen.es/",
       placement: "top",
       icon: "fab fa-instagram",
     },
@@ -54,7 +54,7 @@ const SocialLinks = () => {
         <a key={i} href={link.link}>
           <OverlayTrigger
             placement={link.placement?.length ? link.placement : "auto"}
-            overlay={<Tooltip id="tooltip"> {link.name}</Tooltip>}
+            overlay={<Tooltip id={"tooltip" + i}> {link.name}</Tooltip>}
           >
             <i className={link.icon}></i>
           </OverlayTrigger>
