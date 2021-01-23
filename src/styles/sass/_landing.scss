@@ -87,9 +87,7 @@
     .header__image {
       order: 1;
       width: 100%;
-      // border: 2px solid black;
-      display: flex;
-      justify-content: center;
+
       img {
         margin: 0 auto !important;
         width: 60%;
@@ -377,7 +375,7 @@
       align-items: center;
       flex-direction: column;
       img {
-        width: 300px;
+        width: 250px;
       }
     }
   }
