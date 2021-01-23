@@ -6,8 +6,11 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import Footer from "@components/Footer";
 import Head from "next/head";
 import NextLink from "next/link";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { gql, useQuery } from "@apollo/client";
 SwiperCore.use([Navigation]);
 SwiperCore.use([Pagination]);
+
 const Services = () => {
   const services: { name: string; link: string }[] = [
     {
@@ -114,6 +117,7 @@ export default function Home() {
         <title>Catzen</title>
       </Head>
       <Nav />
+
       <div className="hero margin_of_nav">
         <Container>
           <header className="header">
@@ -302,3 +306,9 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return {
+    props: {},
+  };
+};

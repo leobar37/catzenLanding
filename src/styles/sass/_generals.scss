@@ -37,11 +37,24 @@
     color: black;
     transform: scale(1.08);
   }
+  &:disabled {
+    opacity: 0.5;
+  }
   @include media-sm {
     font-size: 1rem;
   }
 }
 
+.errors {
+  padding: 10px 15px;
+  color: black;
+  list-style: none;
+  background-color: white;
+  li {
+    font-size: 15px;
+    font-style: italic;
+  }
+}
 .socialIcons {
   text-align: left;
   a {
@@ -105,4 +118,21 @@
 
 .margin_of_nav {
   padding-top: 10vh !important;
+}
+
+.loading {
+  position: fixed;
+  width: 100% !important;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    color: white;
+    text-transform: capitalize;
+  }
+  svg {
+    height: 50px;
+  }
 }

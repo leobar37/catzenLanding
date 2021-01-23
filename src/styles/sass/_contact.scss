@@ -68,6 +68,13 @@
   /* variables */
   $bottom-label: 15px;
   $bottom-label-leave: 40px;
+  span {
+    position: absolute;
+    bottom: -8px;
+    font-size: 15px;
+    opacity: 1;
+    font-style: italic;
+  }
   label {
     width: 100%;
     position: absolute;

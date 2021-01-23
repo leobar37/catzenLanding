@@ -3,23 +3,26 @@ import {
   forwardRef,
   InputHTMLAttributes,
   TextareaHTMLAttributes,
+  useState,
 } from "react";
 import { FormControl } from "react-bootstrap";
 
 interface FLoatIputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  error?: string;
 }
 interface FLoatIputTextProps
   extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
 }
-
 export const FloatInput = forwardRef<HTMLInputElement, FLoatIputProps>(
   (props: FLoatIputProps, ref) => {
+    const isError = props.error !== "undefined";
     return (
       <div className="catzen_input">
-        <input {...props} type="text" ref={ref} name="" />
+        <input {...props} type="text" ref={ref} />
         <label>{props.label}</label>
+        <span style={{ display: !isError ? "none" : "" }}>{props.error}</span>
       </div>
     );
   }
@@ -35,7 +38,7 @@ export const FloatInputText = forwardRef<
   } as CSSProperties;
   return (
     <div className="catzen_input" style={stylesTextArea}>
-      <textarea placeholder="Mensaje" {...props} ref={ref} name="" />
+      <textarea placeholder="Mensaje" {...props} ref={ref} />
       <label>{props.label}</label>
     </div>
   );
