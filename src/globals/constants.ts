@@ -25,3 +25,6 @@ export const servicesCheckbox = [
     value: "Audiovisuales",
   },
 ];
+
+export const uribackend =
+  process.env.NEXT_PUBLIC_HOST || "https://app.catzens.com";

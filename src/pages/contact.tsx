@@ -70,15 +70,17 @@ function Contact() {
           <Formik
             initialValues={
               {
-                name: "Elmer ",
-                lastname: "Leon Barboz",
-                phone: "920249753",
-                company: "catzen",
-                email: "catze@gmail.com",
+                name: "",
+                lastname: "",
+                phone: "",
+                company: "",
+                email: "",
               } as Icotization
             }
             validationSchema={schemaContact}
             onSubmit={(values, { setSubmitting }) => {
+              console.log(values.services);
+
               addCotization({
                 variables: {
                   cotization: {
@@ -103,19 +105,19 @@ function Contact() {
                   <Field
                     name="lastname"
                     label="Apellidos"
-                    placeholder="León Barboza"
+                    placeholder="Leon Barboza"
                     component={FieldComponent}
                   />
                   <Field
                     name="email"
                     label="Correo"
-                    placeholder="catzen@catzen.com"
+                    placeholder="example@example.com"
                     component={FieldComponent}
                   />
                   <Field
                     name="phone"
                     label="Teléfono"
-                    placeholder="+51920249753"
+                    placeholder="+51987654321"
                     component={FieldComponent}
                   />
                   <Field
@@ -160,7 +162,6 @@ function Contact() {
             )}
           </Formik>
         </Container>
-
         <Modal show={visibleModal}>
           <CotentModal cotization={cotization}></CotentModal>
           <Modal.Footer>

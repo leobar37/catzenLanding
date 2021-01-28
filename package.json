@@ -10,6 +10,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.7",
     "@djthoms/pretty-checkbox": "^3.1.0",
+    "@keystonejs/apollo-helpers": "^5.1.8",
     "animate.css": "^4.1.1",
     "antd": "^4.10.3",
     "bootstrap": "^4.5.3",
@@ -25,6 +26,7 @@
     "react-dom": "17.0.1",
     "react-gsap": "^2.2.1",
     "react-loading": "^2.0.3",
+    "react-messenger-customer-chat": "^0.8.0",
     "react-transition-group": "^4.4.1",
     "sass": "^1.32.4",
     "swiper": "^6.4.5",
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@types/gsap": "^1.20.2",
+    "@types/keystonejs__apollo-helpers": "^5.0.1",
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
     "typescript": "^4.1.3"

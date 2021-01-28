@@ -1,13 +1,13 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { useMemo } from "react";
-
+import { uribackend } from "../globals/constants";
 let apolloClient: any;
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window == "undefined",
     link: new HttpLink({
-      uri: "http://localhost:4000/admin/api",
+      uri: `${uribackend}/admin/api`,
     }),
     cache: new InMemoryCache(),
   });
