@@ -1,3 +1,5 @@
+import { domain } from "process";
+
 export const servicesCheckbox = [
   {
     label: "Fotografía",
@@ -26,5 +28,6 @@ export const servicesCheckbox = [
   },
 ];
 
+export const DERECTIONDEFAULT = "http://catzens.com/";
 export const uribackend =
   process.env.NEXT_PUBLIC_HOST || "https://app.catzens.com";

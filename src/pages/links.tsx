@@ -5,6 +5,7 @@ import SocialLinks from "@components/SocialLinks";
 import { CSSTransition } from "react-transition-group";
 import Head from "next/head";
 import Link from "next/link";
+import { SeoIndex } from "@components/Seo/seo";
 function Links() {
   const [transition, setTransition] = useState(false);
 
@@ -21,9 +22,8 @@ function Links() {
 
   return (
     <>
-      <Head>
-        <title>Links</title>
-      </Head>
+      <SeoIndex title="links" page="Links" />
+
       <CSSTransition classNames="link" timeout={300} in={transition}>
         <div className="bg_primary links">
           <Container>

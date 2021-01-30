@@ -24,6 +24,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,800&display=swap"
             rel="stylesheet"
           />
+          <link rel="icon" type="image/png" href="/favicon.ico"></link>
           {/* font awesome */}
           <link
             rel="stylesheet"

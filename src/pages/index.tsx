@@ -4,10 +4,10 @@ import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import Footer from "@components/Footer";
-import Head from "next/head";
+import { SeoIndex } from "@components/Seo/seo";
 import NextLink from "next/link";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
-import { gql, useQuery } from "@apollo/client";
+
 SwiperCore.use([Navigation]);
 SwiperCore.use([Pagination]);
 
@@ -110,14 +110,9 @@ const GaleryReson = () => {
   );
 };
 
-export default function Home() {
+const Main = () => {
   return (
-    <>
-      <Head>
-        <title>Catzen</title>
-      </Head>
-      <Nav />
-
+    <main>
       <div className="hero margin_of_nav">
         <Container>
           <header className="header">
@@ -302,6 +297,15 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </section>
+    </main>
+  );
+};
+export default function Home() {
+  return (
+    <>
+      <SeoIndex title="Inicio" />
+      <Nav />
+      <Main />
       <Footer />
     </>
   );

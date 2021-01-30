@@ -12,6 +12,7 @@ import { Icotization } from "models/Cotization";
 import { Modal } from "react-bootstrap";
 import Loading from "@components/Loading";
 import { schemaContact } from "../libs/validatorsschama";
+import { SeoIndex } from "@components/Seo/seo";
 const FieldComponent = ({
   field,
   form: { touched, errors },
@@ -60,6 +61,8 @@ function Contact() {
 
   return (
     <>
+      <SeoIndex title="Cotización" />
+
       {loadinCotization ?? <Loading />}
       <NavBar />
       <section className="contact margin_of_nav">
