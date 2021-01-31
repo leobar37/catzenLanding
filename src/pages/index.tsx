@@ -117,16 +117,15 @@ const Main = () => {
   const refNavigation = useRef<HTMLElement>(null);
   const transitionStart = (source: any) => {
     const element = source.slides[source.activeIndex] as HTMLElement;
-    gsap.fromTo(element, { y: -100, opacity: 0 }, { opacity: 1 });
+    gsap.fromTo(element, { y: -100, opacity: 0, duration: 1 }, { opacity: 1 });
   };
   return (
     <main>
       <SocialLinks fixed />
       <header className="header container">
         <Swiper
-          speed={250}
           autoplay={{
-            delay: 2000,
+            delay: 2500,
           }}
           breakpoints={{
             430: {
