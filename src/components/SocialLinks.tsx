@@ -18,7 +18,7 @@ type TPlacement =
   | "left-end"
   | undefined;
 
-const SocialLinks = (props: { fixed: boolean }) => {
+const SocialLinks = (props: { fixed?: boolean }) => {
   const links: {
     name: string;
     link: string;
