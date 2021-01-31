@@ -135,7 +135,7 @@ const Main = () => {
           }}
           loop
           onTransitionStart={transitionStart}
-          className="margin_of_nav"
+          className="margin_of_nav galery_headd"
         >
           {dataSlides.map((item, i) => (
             <SwiperSlide key={i} className="slider_header">

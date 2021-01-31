@@ -72,6 +72,9 @@
     a {
       padding: 15px;
     }
+    @include media-md {
+      top: 120px;
+    }
   }
   a {
     padding: 10px 10px;
