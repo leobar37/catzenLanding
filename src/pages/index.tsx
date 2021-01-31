@@ -1,40 +1,23 @@
 import Nav from "@components/Nav";
-import SocialLinks from "@components/SocialLinks";
+import { TypedataSlide } from "../models/landing";
 import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import Footer from "@components/Footer";
 import { SeoIndex } from "@components/Seo/seo";
 import NextLink from "next/link";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
-
+import { useRef } from "react";
+import { services } from "../doc/landing";
+import { GetServerSideProps } from "next";
+import SocialLinks from "@components/SocialLinks";
+import { gsap } from "gsap";
+/**data */
+import { dataSlides } from "../doc/landing";
 SwiperCore.use([Navigation]);
 SwiperCore.use([Pagination]);
+SwiperCore.use([Autoplay]);
 
 const Services = () => {
-  const services: { name: string; link: string }[] = [
-    {
-      name: "Contenido audiovisual",
-      link: "",
-    },
-    {
-      name: "marketing digital",
-      link: "",
-    },
-    {
-      name: "paginas web",
-      link: "",
-    },
-    {
-      name: "fotografía",
-      link: "",
-    },
-    {
-      name: "publicidad online",
-      link: "",
-    },
-  ];
-
   return (
     <section className="services d-flex justify-content-center align-items-center flex-column">
       <h1 className="title text-center">Servicios</h1>
@@ -110,34 +93,59 @@ const GaleryReson = () => {
   );
 };
 
+const SlideHeader = (data: TypedataSlide) => {
+  return (
+    <>
+      <div className="header__text">
+        <h1 className="title">{data.title}</h1>
+        <p>{data.description}</p>
+        <NextLink href={data.link}>
+          <Button variant="primary" className="button">
+            {data.button}
+          </Button>
+        </NextLink>
+      </div>
+      {/* right */}
+      <div className="header__image">
+        <img src={data.image} alt={data.title} />
+      </div>
+    </>
+  );
+};
+
 const Main = () => {
+  const refNavigation = useRef<HTMLElement>(null);
+  const transitionStart = (source: any) => {
+    const element = source.slides[source.activeIndex] as HTMLElement;
+    gsap.fromTo(element, { y: -100, opacity: 0 }, { opacity: 1 });
+  };
   return (
     <main>
-      <div className="hero margin_of_nav">
-        <Container>
-          <header className="header">
-            {/* left */}
-            <div className="header__text">
-              <h1 className="title">¡Haz notar tu empresa!</h1>
-              <p>
-                Disponemos de un equipo especializado en la creación de paginas
-                web, contenido audiovisual, fotografía y marketing digital
-              </p>
-              <NextLink href="/contact">
-                <Button variant="primary">cotizar</Button>
-              </NextLink>
-            </div>
-            {/* right */}
-            <div className="header__image">
-              <img src="/assets/images/bocina.svg" alt="" />
-            </div>
-          </header>
-        </Container>
-        <div className="addon_rect">
-          <Container>
-            <SocialLinks />
-          </Container>
-        </div>
+      <SocialLinks fixed />
+      <header className="header container">
+        <Swiper
+          speed={250}
+          autoplay={{
+            delay: 2000,
+          }}
+          breakpoints={{
+            430: {
+              pagination: { el: ".pagination", clickable: true },
+            },
+          }}
+          loop
+          onTransitionStart={transitionStart}
+          className="margin_of_nav"
+        >
+          {dataSlides.map((item, i) => (
+            <SwiperSlide key={i} className="slider_header">
+              <SlideHeader {...item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </header>
+      <div className="addon_rect header">
+        <div className="pagination"></div>
       </div>
       {/* about  */}
       <Container>

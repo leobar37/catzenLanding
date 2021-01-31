@@ -24,8 +24,8 @@ function Nav() {
       route: "",
     },
     {
-      name: "Contacto",
-      route: "contact",
+      name: "Cotización",
+      route: "cotization",
     },
   ];
 

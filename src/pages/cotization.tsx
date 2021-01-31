@@ -5,7 +5,7 @@ import { FloatInput, FloatInputText } from "@components/custom/FloatInput";
 import { Checkbox } from "pretty-checkbox-react";
 import "@djthoms/pretty-checkbox";
 import Footer from "@components/Footer";
-import { Form, Formik, Field, FieldProps, ErrorMessage } from "formik";
+import { Form, Formik, Field, FieldProps } from "formik";
 import { servicesCheckbox } from "../globals/constants";
 import { useAddCotization } from "@services/cotization";
 import { Icotization } from "models/Cotization";
@@ -24,11 +24,9 @@ const FieldComponent = ({
     </>
   );
 };
-
 type ContentModalProps = {
   cotization: Icotization | undefined;
 };
-
 const CotentModal = ({ cotization }: ContentModalProps) => {
   if (typeof cotization == "undefined") {
     return <></>;
@@ -51,14 +49,12 @@ const CotentModal = ({ cotization }: ContentModalProps) => {
 
 function Contact() {
   const services = servicesCheckbox;
-
   const [visibleModal, setVisibleModal] = useState(false);
   const {
     addCotization,
     data: cotization,
     loading: loadinCotization,
   } = useAddCotization();
-
   return (
     <>
       <SeoIndex title="Cotización" />

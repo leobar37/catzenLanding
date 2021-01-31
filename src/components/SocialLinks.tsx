@@ -18,7 +18,7 @@ type TPlacement =
   | "left-end"
   | undefined;
 
-const SocialLinks = () => {
+const SocialLinks = (props: { fixed: boolean }) => {
   const links: {
     name: string;
     link: string;
@@ -49,7 +49,7 @@ const SocialLinks = () => {
     },
   ];
   return (
-    <ul className="socialIcons">
+    <ul className={`socialIcons ${props.fixed ? "fixed" : ""}`}>
       {links.map((link, i) => (
         <a key={i} href={link.link}>
           <OverlayTrigger

@@ -57,6 +57,22 @@
 }
 .socialIcons {
   text-align: left;
+
+  &.fixed {
+    position: fixed;
+    top: 180px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    z-index: 60;
+    padding: 10px 0px;
+    a {
+      padding: 15px;
+    }
+  }
   a {
     padding: 10px 10px;
   }
@@ -66,19 +82,13 @@
   }
   @include media-md {
     text-align: center;
+    &.fixed {
+      a i {
+        font-size: 1.5rem;
+      }
+    }
   }
   @include media-sm {
-    a i {
-      font-size: 2rem;
-    }
-  }
-  @include media-ssm {
-    width: 100%;
-    width: 100vw;
-    vertical-align: middle;
-    a {
-      padding: 0 8px;
-    }
     a i {
       font-size: 2rem;
     }
