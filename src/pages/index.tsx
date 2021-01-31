@@ -117,7 +117,8 @@ const Main = () => {
   const refNavigation = useRef<HTMLElement>(null);
   const transitionStart = (source: any) => {
     const element = source.slides[source.activeIndex] as HTMLElement;
-    gsap.fromTo(element, { y: -100, opacity: 0, duration: 1 }, { opacity: 1 });
+    gsap.from(element, { y: -150, opacity: 0, duration: 0.5 });
+    gsap.to(element, { y: -80, opacity: 1, duration: 0.5 });
   };
   return (
     <main>
